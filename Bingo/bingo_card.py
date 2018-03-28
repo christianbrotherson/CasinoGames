@@ -89,7 +89,6 @@ class BingoCard:
         B.setSize(18)
         B.draw(win)
         y += 98
-
     def display_i_nums(i):
       y = 159
       for x in i:
@@ -97,7 +96,6 @@ class BingoCard:
         I.setSize(18)
         I.draw(win)
         y += 98
-
     def display_n_nums(n):
       B = Text(Point(250, 159), n[0])
       B.setSize(18)
@@ -111,8 +109,6 @@ class BingoCard:
       O = Text(Point(250, 551), n[3])
       O.setSize(18)
       O.draw(win)
-        
-
     def display_g_nums(g):
       y = 159
       for i in g:
@@ -120,7 +116,6 @@ class BingoCard:
         G.setSize(18)
         G.draw(win)
         y += 98
-
     def display_o_nums(o):
       y = 159
       for i in o:
@@ -128,9 +123,11 @@ class BingoCard:
         O.setSize(18)
         O.draw(win)
         y += 98
-
     display_b_nums(b)
     display_i_nums(i)
     display_n_nums(n)
     display_g_nums(g)
     display_o_nums(o)
+  
+  # def update_card():
+  #   # TODO
