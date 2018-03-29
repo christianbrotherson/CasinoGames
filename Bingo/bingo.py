@@ -12,17 +12,20 @@
 # Need to incorporate the Player class from the blackjack game and make sure that I can create players and update their losses and winnings.
 
 from graphics import *
-import random
-
-from bingo_card import BingoCard
+from bingo_card import BingoCardNumbers
+from bingo_display import BingoDisplay
 from next_number import NextNumber
 
 def main():
-  player_card = BingoCard()
-  player_card_numbers = player_card.get_random_numbers_for_card()
-  win = GraphWin('BINGO', 500, 800)
-  b,i,n,g,o = player_card.assign_rand_nums_to_bingo(player_card_numbers)
-  player_card.display_player_card(b,i,n,g,o,win)
+  player_card_numbers = BingoCardNumbers()
+  player_card_display = BingoDisplay()
+  card_nums = player_card_numbers.get_random_numbers_for_card()
+  win = GraphWin('BINGO', 600, 800, autoflush=False)
+  win.setBackground(color_rgb(191, 191, 191))
+  b,i,n,g,o = player_card_numbers.assign_rand_nums_to_bingo(card_nums)
+  background_change = player_card_display.display_player_card(b,i,n,g,o,win)
+  player_card_display.in_circle(background_change, win)
   win.getMouse()
+
   
-main()  
+main()
